@@ -1,0 +1,28 @@
+Superposition Benchmark v1.1 results:
+FPS: 7.1
+Score: 953
+Min FPS: 6.1
+Max FPS: 8.4
+
+System:
+	Platform: Linux 7.2.5-3-omarchy x86_64
+	CPU model: Intel(R) Core(TM) i5-9400H CPU @ 2.50GHz (2495MHz) x8
+	GPU model: Unknown GPU (256MB) x1
+
+Settings:
+	Render: OpenGL
+	Fullscreen: normal
+	App resolution: 1920x1080
+	Render resolution: 1920x1080
+	Shaders: High
+	Textures: high
+	SSRT: enabled
+	SSAO: enabled
+	SSGI: disabled
+	Parallax: enabled
+	Refraction: enabled
+	Motion blur: enabled
+	DOF: enabled
+
+Powered by UNIGINE Engine (http://unigine.com/products/unigine/)
+Unigine Corp. 2005-2019

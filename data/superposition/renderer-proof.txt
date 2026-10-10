@@ -1,0 +1,9 @@
+UNIGINE Superposition 1.1 engine identification, transcribed from each run:
+
+OpenGL vendor:   NVIDIA Corporation
+OpenGL renderer: Quadro RTX 3000/PCIe/SSE2
+OpenGL version:  4.4.0 NVIDIA 580.178.04
+
+The automation report's "Unknown GPU (256MB)" label is therefore an old
+UNIGINE detection/display issue, not evidence that the Intel GPU rendered the
+benchmark.

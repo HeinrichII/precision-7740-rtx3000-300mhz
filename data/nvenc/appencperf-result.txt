@@ -1,0 +1,20 @@
+GPU in use: Quadro RTX 3000
+
+Encoding parameters:
+  codec: h264
+  preset: hp (legacy)
+  profile: high
+  chroma: yuv420
+  bit depth: 8
+  rate control: vbr_hq
+  nominal fps: 60/1
+  GOP: 250
+  B-frames: 0
+  size: 1920x1080
+  bitrate: 50000000
+  max bitrate: 50000000
+  AQ: disabled
+  temporal AQ: disabled
+  lookahead: disabled
+
+nTotal=10000, time=68.3832 seconds, FPS=146.235

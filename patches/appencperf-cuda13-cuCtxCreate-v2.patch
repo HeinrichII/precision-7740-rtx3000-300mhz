@@ -1,0 +1,33 @@
+diff --git a/Samples/AppEncode/AppEncPerf/AppEncPerf.cpp b/Samples/AppEncode/AppEncPerf/AppEncPerf.cpp
+index 56ad76c..f74a693 100644
+--- a/Samples/AppEncode/AppEncPerf/AppEncPerf.cpp
++++ b/Samples/AppEncode/AppEncPerf/AppEncPerf.cpp
+@@ -19,6 +19,10 @@
+ #include "../Utils/NvEncoderCLIOptions.h"
+ #include "../Utils/NvCodecUtils.h"
+
++// CUDA 13 maps cuCtxCreate to the newer v4 ABI, while this historical SDK
++// sample and the installed 580 driver use the long-established v2 ABI.
++extern "C" CUresult CUDAAPI cuCtxCreate_v2(CUcontext *pctx, unsigned int flags, CUdevice dev);
++
+ simplelogger::Logger *logger = simplelogger::LoggerFactory::CreateConsoleLogger();
+
+ void EncProc(NvEncoder *pEnc, uint8_t *pBuf, uint32_t nBufSize, uint32_t nFrameTotal,
+@@ -252,7 +256,7 @@ int main(int argc, char **argv)
+         }
+
+         CUcontext cuContext = NULL;
+-        ck(cuCtxCreate(&cuContext, CU_CTX_SCHED_BLOCKING_SYNC, cuDevice));
++        ck(cuCtxCreate_v2(&cuContext, CU_CTX_SCHED_BLOCKING_SYNC, cuDevice));
+
+         std::vector<CUdeviceptr> vdpBuf;
+
+@@ -278,7 +282,7 @@ int main(int argc, char **argv)
+         for (int i = 1; i < nThread; i++)
+         {
+             if (!bSingle) {
+-                ck(cuCtxCreate(&cuContext, CU_CTX_SCHED_BLOCKING_SYNC, cuDevice));
++                ck(cuCtxCreate_v2(&cuContext, CU_CTX_SCHED_BLOCKING_SYNC, cuDevice));
+                 CUdeviceptr dpBuf;
+                 ck(cuMemAlloc(&dpBuf, nBufSize));
+                 vdpBuf.push_back(dpBuf);

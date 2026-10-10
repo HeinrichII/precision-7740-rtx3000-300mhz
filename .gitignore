@@ -1,0 +1,12 @@
+# Generated benchmark runs
+results/
+
+# Large third-party downloads and generated video inputs
+*.run
+*.yuv
+video-sdk-samples/
+
+# Editor and OS files
+.DS_Store
+*.swp
+*~
